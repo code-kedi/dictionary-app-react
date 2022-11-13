@@ -1,7 +1,8 @@
 import React from "react";
 
 export default function Synonyms(props) {
-  if (props.synonyms) {
+  // only show synonyms when we have at least one synonym in the array
+  if (props.synonyms.length > 0) {
     return (
       <div className="Synonyms">
         <strong>Synonyms:</strong>
