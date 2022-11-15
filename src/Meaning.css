@@ -1,0 +1,21 @@
+.Meaning h4 {
+  color: #9ED5C5;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.Meaning ul {
+  list-style-type: circle;
+}
+
+.Meaning ul li span {
+  display: block;
+}
+
+
+.Meaning .example {
+  font-style: italic;
+  margin-bottom: -10px;
+  opacity: 0.5;
+}

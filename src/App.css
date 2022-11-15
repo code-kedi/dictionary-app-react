@@ -1,3 +1,14 @@
+body {
+  background-color: #DEF5E5 !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.App h1 {
+  color: #333;
+  font-size: 32px;
+  font-weight: 400;
+}
+
 .App-header, .App-footer {
   margin: 30px 0;
   text-align: center;
