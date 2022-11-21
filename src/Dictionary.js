@@ -8,13 +8,23 @@ export default function Dictionary(props) {
   const [results, setResults] = useState(null);
   const [loaded, setLoaded] = useState(false);
 
-  function handleResponse(response) {
+  function handleDictionResponse(response) {
     setResults(response.data[0]);
+  }
+
+  function handlePexelsResponse(response) {
+    console.log(response);
   }
 
   function search() {
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
-    axios.get(apiUrl).then(handleResponse);
+    axios.get(apiUrl).then(handleDictionResponse);
+
+    const pexelsApiKey = process.env.REACT_APP_PEXELS_API_KEY;
+    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=1`;
+    console.log(pexelsApiUrl);
+    const headers = { Authorization: `Bearer ${pexelsApiKey}` };
+    axios.get(pexelsApiUrl, { headers: headers }).then(handlePexelsResponse);
   }
 
   function handleSubmit(event) {
